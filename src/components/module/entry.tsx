@@ -13,6 +13,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { nanoid } from "nanoid";
 
 const Entry = () => {
   const addNewBookmark = useBookmark((state) => state.add);
@@ -21,7 +22,9 @@ const Entry = () => {
 
   const handleSubmit = () => {
     if (title === "" || url === "") return;
-    addNewBookmark({ title, url });
+    addNewBookmark({ id: nanoid(), title, url });
+    setTitle("");
+    setUrl("");
   };
 
   return (

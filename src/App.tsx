@@ -9,7 +9,7 @@ const App = () => {
       <div className="w-full h-full flex flex-col">
         <div className="w-full h-[90%] flex flex-col gap-y-4 overflow-y-auto">
           {bookmarks.map((v, i) => (
-            <Bookmark title={v.title} url={v.url} key={i} />
+            <Bookmark title={v.title} url={v.url} key={i} id={v.id} />
           ))}
         </div>
         <div className="w-full h-[10%] flex items-center">
