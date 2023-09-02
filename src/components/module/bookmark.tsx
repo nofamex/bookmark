@@ -1,20 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-const Bookmark = () => {
+interface BookmarkProps {
+  title: string;
+  url: string;
+}
+
+const Bookmark: React.FC<BookmarkProps> = ({ title, url }) => {
   return (
     <Card className="w-full min-h-[160px] drop-shadow-md">
       <CardHeader>
-        <CardTitle className="text-lg"> Read this later </CardTitle>
+        <CardTitle className="text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="truncate hover:text-clip">
-          freestar freestar Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Mauris venenatis risus eget aliquam dignissim. Donec vitae
-          bibendum libero. Donec scelerisque, urna vel placerat mattis, eros
-          risus pulvinar purus, ut ornare justo diam sodales massa. Phasellus
-          egestas eros tincidunt sollicitudin lobortis. Integer ut vestibulum
-          ante, quis ornare velit.{" "}
-        </p>
+        <p className="truncate hover:text-clip">{url}</p>
       </CardContent>
     </Card>
   );
