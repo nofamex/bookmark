@@ -1,16 +1,23 @@
-import { useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import Bookmark from "./components/module/bookmark";
 
-function App() {
-  const [counter, setCounter] = useState(0);
+const App = () => {
   return (
-    <div className="w-screen h-screen bg-primary flex flex-col justify-center items-center">
-      <p className="text-secondary mb-4"> {counter} </p>
-      <Button variant={"secondary"} onClick={() => setCounter(counter + 1)}>
-        Test
-      </Button>
+    <div className="w-screen h-screen bg-secondary p-4">
+      <div className="w-full h-full flex flex-col">
+        <div className="w-full h-[90%] flex flex-col gap-y-4 overflow-y-auto">
+          <Bookmark />
+          <Bookmark />
+          <Bookmark />
+          <Bookmark />
+          <Bookmark />
+        </div>
+        <div className="w-full h-[10%] flex items-center">
+          <Button className="w-full h-2/3">Add Bookmark</Button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
