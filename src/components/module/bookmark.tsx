@@ -23,12 +23,9 @@ const Bookmark: React.FC<BookmarkProps> = ({ title, url, id }) => {
         <CardTitle className="text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p
-          className="overflow-scroll"
-          onClick={() => window.open(url, "_blank")}
-        >
-          {url}
-        </p>
+        <a target="_blank" rel="noopener noreferrer" href={url}>
+          <p className="overflow-scroll">{url}</p>
+        </a>
       </CardContent>
       <CardFooter className="justify-end">
         <Trash2 onClick={() => deleteBookmark({ id, title, url })} />
